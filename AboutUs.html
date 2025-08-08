@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us | SCC Group - Leading Real Estate Developer in NCR</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'scc-navy': '#1e3a8a',
+            'scc-blue': '#3b82f6',
+            'scc-gold': '#f59e0b',
+            'scc-emerald': '#10b981'
+          },
+          fontFamily: {
+            'inter': ['Inter', 'sans-serif']
+          }
+        }
+      }
+    };
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    .scroll-smooth {
+      scroll-behavior: smooth;
+    }
+
+    .timeline-item:not(:last-child):after {
+      content: '';
+      position: absolute;
+      left: 7px;
+      top: 24px;
+      height: 100%;
+      width: 2px;
+      background: #e5e7eb;
+    }
+  </style>
+</head>
+
+<body class="font-inter bg-white scroll-smooth">
+
+  <!-- Navigation Header -->
+  <nav class="fixed top-0 w-full z-50 bg-white/95 backdrop-blur-md shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center py-4">
+        <div class="flex items-center">
+          <img src="https://sccgroup.in/wp-content/uploads/2018/12/SCC-Logo-1.png" alt="SCC Group Logo"
+            class="h-10 w-auto">
+        </div>
+
+        <div class="hidden md:flex items-center space-x-8">
+          <a href="index.html" class="text-gray-700 hover:text-scc-blue font-medium">Home</a>
+
+          <!-- Properties Dropdown -->
+          <div class="relative group">
+            <button class="flex items-center text-gray-700 hover:text-scc-blue font-medium">
+              <span>Properties</span>
+              <i class="fas fa-chevron-down ml-1 text-xs transition-transform group-hover:rotate-180"></i>
+            </button>
+            <div
+              class="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+              <a href="residential.html"
+                class="block px-4 py-2 text-gray-700 hover:bg-scc-blue/10 hover:text-scc-blue">Residential</a>
+              <a href="commercial.html"
+                class="block px-4 py-2 text-gray-700 hover:bg-scc-blue/10 hover:text-scc-blue">Commercial</a>
+            </div>
+          </div>
+
+          <a href="blog.html" class="text-gray-700 hover:text-scc-blue font-medium">Blog</a>
+          <a href="BecomeOurPartners.html" class="text-gray-700 hover:text-scc-blue font-medium">Become Our Partner</a>
+          <a href="AboutUs.html" class="text-scc-blue font-medium">About</a>
+          <a href="index.html#testimonials" class="text-gray-700 hover:text-scc-blue font-medium">Reviews</a>
+          <a href="index.html#contact" class="text-gray-700 hover:text-scc-blue font-medium">Contact</a>
+        </div>
+
+        <div class="flex items-center space-x-4">
+          <button
+            class="bg-scc-gold text-white px-6 py-2 rounded-lg font-semibold hover:bg-yellow-600 transition-colors">
+            Schedule Visit
+          </button>
+          <button class="md:hidden text-gray-700">
+            <i class="fas fa-bars text-xl"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- About Hero Section -->
+  <section class="relative pt-32 pb-20 bg-scc-navy text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h1 class="text-4xl md:text-6xl font-bold mb-6">About SCC Group</h1>
+      <p class="text-xl text-blue-200 max-w-3xl mx-auto">
+        Building dreams since 2005 with ISO-certified excellence in real estate development
+      </p>
+    </div>
+  </section>
+
+  <!-- Company Overview -->
+  <section class="py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div>
+          <h2 class="text-3xl font-bold text-gray-900 mb-6">Our Story</h2>
+          <p class="text-lg text-gray-600 mb-6">
+            SCC Group has emerged as one of the most trusted real estate developers in Delhi NCR, with a legacy spanning
+            over 18 years. From our humble beginnings to becoming an ISO-certified organization, we've consistently
+            delivered quality residential and commercial spaces.
+          </p>
+          <p class="text-lg text-gray-600 mb-6">
+            Our journey reflects our commitment to transparency, timely delivery, and customer satisfaction. We've
+            successfully completed 25+ projects, creating homes for 5000+ happy families and businesses.
+          </p>
+          <div class="grid grid-cols-2 gap-4">
+            <div class="bg-scc-blue/10 p-4 rounded-lg">
+              <p class="text-3xl font-bold text-scc-blue mb-1"><span class="counter" data-target="25">0</span>+</p>
+              <p class="text-gray-600">Years Experience</p>
+            </div>
+            <div class="bg-scc-emerald/10 p-4 rounded-lg">
+              <p class="text-3xl font-bold text-scc-emerald mb-1"><span class="counter" data-target="10">0</span>+</p>
+              <p class="text-gray-600">Projects Completed</p>
+            </div>
+            <div class="bg-scc-gold/10 p-4 rounded-lg">
+              <p class="text-3xl font-bold text-scc-gold mb-1"><span class="counter" data-target="2000">0</span>+</p>
+              <p class="text-gray-600">Happy Customers</p>
+            </div>
+            <div class="bg-scc-navy/10 p-4 rounded-lg">
+              <p class="text-3xl font-bold text-scc-navy mb-1">ISO</p>
+              <p class="text-gray-600">Certified</p>
+            </div>
+          </div>
+        </div>
+        <div>
+          <img
+            src="https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600"
+            alt="SCC Group Projects" class="rounded-xl shadow-lg w-full h-auto">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    // Counter animation function
+    function animateCounters() {
+      const counters = document.querySelectorAll('.counter');
+      const speed = 8000; // The lower the faster
+
+      counters.forEach(counter => {
+        const target = +counter.getAttribute('data-target');
+        const count = +counter.innerText;
+        const increment = target / speed;
+
+        if (count < target) {
+          counter.innerText = Math.ceil(count + increment);
+          setTimeout(animateCounters, 1);
+        } else {
+          counter.innerText = target;
+        }
+      });
+    }
+
+    // Intersection Observer to trigger animation when section is in view
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          animateCounters();
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.5 });
+
+    // Observe the section
+    const statsSection = document.querySelector('section.py-20');
+    if (statsSection) {
+      observer.observe(statsSection);
+    }
+  </script>
+
+  <!-- Our Journey Timeline -->
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-center text-gray-900 mb-12">Our Journey</h2>
+
+      <div class="max-w-3xl mx-auto space-y-8">
+        <!-- Timeline Item 1 -->
+        <div class="relative timeline-item pl-8">
+          <div class="absolute left-0 w-4 h-4 rounded-full bg-scc-blue border-4 border-white shadow-md"></div>
+          <div class="bg-white p-6 rounded-lg shadow-sm">
+            <h3 class="text-xl font-bold text-gray-900 mb-2">2005 - Foundation</h3>
+            <p class="text-gray-600">SCC Group was established with a vision to create quality housing solutions in the
+              rapidly growing NCR region.</p>
+          </div>
+        </div>
+
+        <!-- Timeline Item 2 -->
+        <div class="relative timeline-item pl-8">
+          <div class="absolute left-0 w-4 h-4 rounded-full bg-scc-blue border-4 border-white shadow-md"></div>
+          <div class="bg-white p-6 rounded-lg shadow-sm">
+            <h3 class="text-xl font-bold text-gray-900 mb-2">2010 - First Major Project</h3>
+            <p class="text-gray-600">Successfully delivered our first residential complex in Ghaziabad, setting new
+              standards in the local market.</p>
+          </div>
+        </div>
+
+        <!-- Timeline Item 3 -->
+        <div class="relative timeline-item pl-8">
+          <div class="absolute left-0 w-4 h-4 rounded-full bg-scc-blue border-4 border-white shadow-md"></div>
+          <div class="bg-white p-6 rounded-lg shadow-sm">
+            <h3 class="text-xl font-bold text-gray-900 mb-2">2005 - ISO Certification</h3>
+            <p class="text-gray-600">Achieved ISO certification, formalizing our commitment to quality management
+              systems and processes.</p>
+          </div>
+        </div>
+
+        <!-- Timeline Item 4 -->
+        <div class="relative timeline-item pl-8">
+          <div class="absolute left-0 w-4 h-4 rounded-full bg-scc-blue border-4 border-white shadow-md"></div>
+          <div class="bg-white p-6 rounded-lg shadow-sm">
+            <h3 class="text-xl font-bold text-gray-900 mb-2">2018 - Commercial Ventures</h3>
+            <p class="text-gray-600">Expanded into commercial real estate with SCC Biz Plaza, our first premium office
+              space project.</p>
+          </div>
+        </div>
+
+        <!-- Timeline Item 5 -->
+        <div class="relative timeline-item pl-8">
+          <div class="absolute left-0 w-4 h-4 rounded-full bg-scc-blue border-4 border-white shadow-md"></div>
+          <div class="bg-white p-6 rounded-lg shadow-sm">
+            <h3 class="text-xl font-bold text-gray-900 mb-2">2023 - Current Projects</h3>
+            <p class="text-gray-600">Developing SCC Blossom and SCC Heights in Raj Nagar Extension, featuring modern
+              amenities and sustainable design.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Our Values -->
+  <section class="py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-center text-gray-900 mb-12">Our Core Values</h2>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- Value 1 -->
+        <div class="bg-white p-8 rounded-xl shadow-md text-center">
+          <div class="w-20 h-20 bg-scc-blue/10 rounded-full flex items-center justify-center mx-auto mb-6">
+            <i class="fas fa-handshake text-3xl text-scc-blue"></i>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-3">Integrity</h3>
+          <p class="text-gray-600">We conduct business with honesty and transparency, building trust with customers and
+            partners.</p>
+        </div>
+
+        <!-- Value 2 -->
+        <div class="bg-white p-8 rounded-xl shadow-md text-center">
+          <div class="w-20 h-20 bg-scc-emerald/10 rounded-full flex items-center justify-center mx-auto mb-6">
+            <i class="fas fa-award text-3xl text-scc-emerald"></i>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-3">Quality</h3>
+          <p class="text-gray-600">From materials to craftsmanship, we never compromise on quality in our constructions.
+          </p>
+        </div>
+
+        <!-- Value 3 -->
+        <div class="bg-white p-8 rounded-xl shadow-md text-center">
+          <div class="w-20 h-20 bg-scc-gold/10 rounded-full flex items-center justify-center mx-auto mb-6">
+            <i class="fas fa-clock text-3xl text-scc-gold"></i>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-3">Timely Delivery</h3>
+          <p class="text-gray-600">We respect our commitments and ensure projects are delivered as promised.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Director's Desk -->
+  <section class="py-20 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div class="order-2 md:order-1">
+          <h2 class="text-3xl font-bold text-gray-900 mb-6">Director's Desk</h2>
+          <blockquote class="text-lg text-gray-600 mb-6 italic border-l-4 border-scc-gold pl-6 py-2">
+            "At SCC Group, we believe in creating not just buildings, but lifestyles. Our vision has always been to
+            deliver quality constructions with transparency and timely delivery. We take pride in our customer-centric
+            approach and the trust we've built over the years."
+          </blockquote>
+          <p class="text-lg text-gray-600 mb-6">
+            At the helm of the affairs at SCC Builders are two partners with a common vision and experience of over 25
+            years in real estate. Sound financial background and rich experience of Indian reality market makes them one
+            of the front-runners in reality sector of Delhi-NCR.
+
+            Sh. Vinod Goswami, the Chairman has over 25 years of experience in Real Estate. His vision to enter into a
+            core sector business of housing construction has yielded fruitful results for the company. His aptitude for
+            excellence has created highest business standards, which are appreciated by competitors as well.
+
+            Sh. Vipul Giri, the Managing Director has over 15 years of experience in Construction and Real Estate. His
+            career has traversed as a Manager, Entrepreneur and now as the Managing Director of a company devoted to
+            provide basic necessity to mankind, “a home”. They are aided by a well qualified and technically experienced
+            team of Marketing & Sales personnel, Civil Engineers & Contractors, Skilled and Semi-skilled Carpenters and
+            labourers etc
+          </p>
+          <div class="flex items-center">
+            <div>
+
+            </div>
+          </div>
+        </div>
+        <div class="order-1 md:order-2">
+          <img src="Images/Director.webp"
+            alt="Mr. Sanjay Chaudhary - Director SCC Group" class="rounded-xl shadow-lg w-full h-auto">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CREDAI Association -->
+  <section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-3xl font-bold text-gray-900 mb-12">Our Associations</h2>
+
+      <div class="max-w-4xl mx-auto bg-scc-blue/5 p-8 rounded-xl">
+        <div class="flex flex-col md:flex-row items-center justify-center gap-8">
+          <img src="Images/CREDAI New logo.webp" alt="CREDAI Member"
+            class="h-20 w-100 object-contain">
+          <div class="text-left">
+            <h3 class="text-xl font-bold text-gray-900 mb-2">Proud Member of CREDAI</h3>
+            <p class="text-gray-600">
+              SCC Group is a proud member of CREDAI (Confederation of Real Estate Developers' Associations of India),
+              the apex body for private real estate developers in India. This membership reflects our commitment to
+              ethical business practices and adherence to the highest standards in the real estate industry.
+            </p>
+            <p class="text-gray-600 mt-2">
+              CREDAI represents over 12,000 developers across 23 states and 221 city chapters in India.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Awards & Recognition -->
+  <section class="py-16 bg-scc-navy text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-center mb-12">Awards & Recognition</h2>
+
+      <div class="grid md:grid-cols-4 gap-6">
+        <div class="bg-white/10 p-6 rounded-lg text-center">
+          <i class="fas fa-trophy text-4xl text-scc-gold mb-4"></i>
+          <h3 class="font-bold mb-2">Best Residential Developer</h3>
+          <p class="text-blue-200 text-sm">NCR Real Estate Awards 2022</p>
+        </div>
+
+        <div class="bg-white/10 p-6 rounded-lg text-center">
+          <i class="fas fa-medal text-4xl text-scc-gold mb-4"></i>
+          <h3 class="font-bold mb-2">ISO 9001:2015 Certified</h3>
+          <p class="text-blue-200 text-sm">Quality Management Systems</p>
+        </div>
+
+        <div class="bg-white/10 p-6 rounded-lg text-center">
+          <i class="fas fa-leaf text-4xl text-scc-gold mb-4"></i>
+          <h3 class="font-bold mb-2">Green Building Award</h3>
+          <p class="text-blue-200 text-sm">Sustainable Development 2021</p>
+        </div>
+
+        <div class="bg-white/10 p-6 rounded-lg text-center">
+          <i class="fas fa-thumbs-up text-4xl text-scc-gold mb-4"></i>
+          <h3 class="font-bold mb-2">Customer Satisfaction</h3>
+          <p class="text-blue-200 text-sm">Highest Rating 2023</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-white py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid md:grid-cols-4 gap-8">
+        <div>
+          <p class="text-gray-400 mb-4">SCC Group - Building dreams since 2005 with ISO certification and excellence in
+            real estate development.</p>
+          <div class="flex space-x-3">
+            <a href="#" class="text-gray-400 hover:text-scc-gold"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="text-gray-400 hover:text-scc-gold"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="text-gray-400 hover:text-scc-gold"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="font-semibold mb-4">Quick Links</h4>
+          <div class="space-y-2">
+            <a href="index.html" class="block text-gray-400 hover:text-white">Home</a>
+            <a href="residential.html" class="block text-gray-400 hover:text-white">Residential</a>
+            <a href="commercial.html" class="block text-gray-400 hover:text-white">Commercial</a>
+            <a href="blog.html" class="block text-gray-400 hover:text-white">Blog</a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="font-semibold mb-4">Company</h4>
+          <div class="space-y-2">
+            <a href="about.html" class="block text-white">About Us</a>
+            <a href="#testimonials" class="block text-gray-400 hover:text-white">Reviews</a>
+            <a href="partners.html" class="block text-gray-400 hover:text-white">Partners</a>
+            <a href="#contact" class="block text-gray-400 hover:text-white">Contact</a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="font-semibold mb-4">Contact Info</h4>
+          <div class="space-y-2 text-gray-400">
+            <p><i class="fas fa-phone mr-2"></i>+91-9654003399</p>
+            <p><i class="fas fa-envelope mr-2"></i>info@sccgroup.in</p>
+            <p><i class="fas fa-map-marker-alt mr-2"></i>Raj Nagar Extension, Ghaziabad</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+        <p>&copy; 2024 SCC Group. All rights reserved. | <a href="#" class="hover:text-white">Terms of Use</a> | <a
+            href="#" class="hover:text-white">Privacy Policy</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+  </script>
+</body>
+
+</html>

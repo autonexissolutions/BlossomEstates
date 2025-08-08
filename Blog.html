@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog | SCC Group - Real Estate Insights & Updates</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="font-inter bg-white scroll-smooth">
+
+  <!-- Navigation Header -->
+  <nav class="fixed top-0 w-full z-50 bg-white/95 backdrop-blur-md shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center py-4">
+        <div class="flex items-center">
+          <img src="https://sccgroup.in/wp-content/uploads/2018/12/SCC-Logo-1.png" alt="SCC Group Logo"
+            class="h-10 w-auto">
+        </div>
+
+        <div class="hidden md:flex items-center space-x-8">
+          <a href="index.html" class="text-gray-700 hover:text-scc-blue font-medium">Home</a>
+
+          <!-- Properties Dropdown -->
+          <div class="relative group">
+            <button class="flex items-center text-gray-700 hover:text-scc-blue font-medium">
+              <span>Properties</span>
+              <i class="fas fa-chevron-down ml-1 text-xs transition-transform group-hover:rotate-180"></i>
+            </button>
+            <div
+              class="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+              <a href="residential.html"
+                class="block px-4 py-2 text-gray-700 hover:bg-scc-blue/10 hover:text-scc-blue">Residential</a>
+              <a href="commercial.html"
+                class="block px-4 py-2 text-gray-700 hover:bg-scc-blue/10 hover:text-scc-blue">Commercial</a>
+            </div>
+          </div>
+
+          <a href="blog.html" class="text-scc-blue font-medium">Blog</a>
+          <a href="BecomeOurPartners.html" class="text-gray-700 hover:text-scc-blue font-medium">Become Our Partner</a>
+          <a href="index.html#about" class="text-gray-700 hover:text-scc-blue font-medium">About</a>
+          <a href="index.html#testimonials" class="text-gray-700 hover:text-scc-blue font-medium">Reviews</a>
+          <a href="index.html#contact" class="text-gray-700 hover:text-scc-blue font-medium">Contact</a>
+        </div>
+
+        <div class="flex items-center space-x-4">
+          <button onclick="openScheduleVisitModal()"
+            class="bg-scc-gold text-white px-6 py-2 rounded-lg font-semibold hover:bg-yellow-600 transition-colors">
+            Schedule Visit
+          </button>
+          <button class="md:hidden text-gray-700">
+            <i class="fas fa-bars text-xl"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+   <!-- Schedule Visit Modal -->
+    <div id="scheduleVisitModal"
+        class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 bg-black bg-opacity-50">
+        <div class="bg-white rounded-xl max-w-md w-full p-6 relative">
+            <button onclick="closeScheduleVisitModal()"
+                class="absolute top-4 right-4 text-gray-500 hover:text-gray-700">
+                <i class="fas fa-times"></i>
+            </button>
+
+            <h3 class="text-2xl font-bold text-scc-navy mb-4">Schedule a Site Visit</h3>
+
+            <form class="space-y-4" action="https://api.web3forms.com/submit" method="POST">
+                <input type="hidden" name="access_key" value="13299648-d021-446d-a42d-82ce9a30cd90">
+
+                <div>
+                    <label class="block text-sm font-medium mb-1">Full Name*</label>
+                    <input type="text" name="name" required
+                        class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-scc-blue">
+                </div>
+
+                <div>
+                    <label class="block text-sm font-medium mb-1">Email*</label>
+                    <input type="email" name="email" required
+                        class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-scc-blue">
+                </div>
+
+                <div>
+                    <label class="block text-sm font-medium mb-1">Phone Number*</label>
+                    <input type="tel" name="phone" required
+                        class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-scc-blue">
+                </div>
+
+                <div>
+                    <label class="block text-sm font-medium mb-1">Preferred Property</label>
+                    <select name="property"
+                        class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-scc-blue">
+                        <option value="">Select a property</option>
+                        <option value="SCC Blossom">SCC Blossom</option>
+                        <option value="SCC Heights">SCC Heights</option>
+                        <option value="SCC Biz Plaza">SCC Biz Plaza</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label class="block text-sm font-medium mb-1">Preferred Date</label>
+                    <input type="date" name="preferred_date"
+                        class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-scc-blue">
+                </div>
+
+                <div>
+                    <label class="block text-sm font-medium mb-1">Message</label>
+                    <textarea name="message" rows="3"
+                        class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-scc-blue"></textarea>
+                </div>
+
+                <button type="submit"
+                    class="w-full bg-scc-gold text-white py-3 rounded-lg font-semibold hover:bg-yellow-600 transition-colors">
+                    Submit Request
+                </button>
+            </form>
+        </div>
+    </div>
+
+
+
+  <!-- Blog Hero Section -->
+  <section class="relative py-32 bg-scc-navy text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h1 class="text-4xl md:text-6xl font-bold mb-6">SCC Group Blog</h1>
+      <p class="text-xl text-blue-200 max-w-3xl mx-auto">
+        Insights, trends and updates from the world of real estate
+      </p>
+    </div>
+  </section>
+
+  <!-- Blog Content Section -->
+  <section class="py-20 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- Blog Post 1 -->
+        <div class="property-card bg-white rounded-xl shadow-lg overflow-hidden">
+          <img
+            src="Images/Blog-images/Emerging tends.webp"
+            alt="Real Estate Market Trends" class="w-full h-64 object-cover">
+          <div class="p-6">
+            <div class="flex items-center text-sm text-gray-500 mb-2">
+              <span>March 15, 2023</span>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-3">Emerging Trends in NCR Real Estate Market</h3>
+            <p class="text-gray-600 mb-4">The National Capital Region's real estate market is evolving rapidly. Discover
+              the key trends shaping residential and commercial spaces in 2023.</p>
+            <button onclick="toggleBlogContent('blog1')" class="text-scc-blue font-medium hover:text-scc-navy">Read More
+              →</button>
+            <div id="blog1" class="blog-content mt-4">
+              <p class="text-gray-600 mb-4">The National Capital Region (NCR) has witnessed significant transformation
+                in its real estate landscape over the past few years. With changing buyer preferences and evolving work
+                patterns, the market is adapting to new demands.</p>
+              <p class="text-gray-600 mb-4">One of the most notable trends is the increased demand for integrated
+                townships that offer a complete living experience. Buyers are looking for properties that combine
+                residential spaces with commercial areas, recreational facilities, and green spaces.</p>
+              <p class="text-gray-600 mb-4">Another emerging trend is the focus on sustainability. Developers are
+                incorporating eco-friendly features such as rainwater harvesting, solar panels, and energy-efficient
+                lighting systems. SCC Group has been at the forefront of this movement with our Green Living initiatives
+                across all projects.</p>
+              <p class="text-gray-600 mb-4">The commercial real estate sector is also seeing a shift with the rise of
+                hybrid work models. Many companies are opting for smaller, flexible office spaces in suburban locations
+                rather than large centralized offices in business districts.</p>
+              <p class="text-gray-600">As we move further into 2023, these trends are expected to strengthen, with
+                technology playing an even greater role in shaping the future of real estate in NCR.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Blog Post 2 -->
+        <div class="property-card bg-white rounded-xl shadow-lg overflow-hidden">
+          <img
+            src="Images/Blog-images/Sustainable Living.webp"
+            alt="Sustainable Living" class="w-full h-64 object-cover">
+          <div class="p-6">
+            <div class="flex items-center text-sm text-gray-500 mb-2">
+              <span>February 28, 2023</span>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-3">Sustainable Living in Modern Apartments</h3>
+            <p class="text-gray-600 mb-4">How SCC Group is incorporating eco-friendly features and smart technologies in
+              our residential projects for sustainable urban living.</p>
+            <button onclick="toggleBlogContent('blog2')" class="text-scc-blue font-medium hover:text-scc-navy">Read More
+              →</button>
+            <div id="blog2" class="blog-content mt-4">
+              <p class="text-gray-600 mb-4">At SCC Group, we believe sustainable living shouldn't come at the cost of
+                modern comforts. Our residential projects are designed to minimize environmental impact while maximizing
+                quality of life.</p>
+              <p class="text-gray-600 mb-4">All our new developments feature rainwater harvesting systems that collect
+                and reuse rainwater for landscaping and common area maintenance. We've also implemented solar water
+                heating systems that reduce electricity consumption by up to 70% for water heating needs.</p>
+              <p class="text-gray-600 mb-4">Energy efficiency is a key focus area. Our apartments use LED lighting
+                throughout, energy-efficient appliances, and smart home systems that allow residents to monitor and
+                optimize their energy usage.</p>
+   
+              <p class="text-gray-600 mb-4">Waste management is another crucial aspect. We provide segregated waste
+                collection points in all our projects and have partnered with local recycling facilities to ensure
+                proper disposal and recycling of waste.</p>
+              <p class="text-gray-600">Our commitment to sustainability extends beyond construction. We maintain 30%
+                green cover in all our projects, with native plant species that require minimal watering and
+                maintenance. These green spaces not only improve air quality but also provide residents with peaceful
+                outdoor areas to relax and reconnect with nature.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Blog Post 3 -->
+        <div class="property-card bg-white rounded-xl shadow-lg overflow-hidden">
+          <img
+            src="Images/Blog-images/Smart real estate.webp"
+            alt="Investment Guide" class="w-full h-64 object-cover">
+          <div class="p-6">
+            <div class="flex items-center text-sm text-gray-500 mb-2">
+              <span>January 20, 2023</span>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-3">Smart Real Estate Investment Strategies</h3>
+            <p class="text-gray-600 mb-4">Expert advice on making informed property investment decisions in today's
+              dynamic real estate market conditions.</p>
+            <button onclick="toggleBlogContent('blog3')" class="text-scc-blue font-medium hover:text-scc-navy">Read More
+              →</button>
+            <div id="blog3" class="blog-content mt-4">
+              <p class="text-gray-600 mb-4">Investing in real estate continues to be one of the most reliable ways to
+                build wealth, but the current market requires a more strategic approach than ever before. Here are our
+                top recommendations for smart investing in 2023:</p>
+              <p class="text-gray-600 mb-4"><strong>1. Location Still Matters Most:</strong> Focus on emerging areas
+                with strong infrastructure development plans. Raj Nagar Extension, where SCC Group has several projects,
+                is a prime example with its upcoming metro connectivity and road expansions.</p>
+              <p class="text-gray-600 mb-4"><strong>2. Look for Developer Credentials:</strong> Always check the
+                developer's track record, RERA registration, and delivery history. SCC Group's 18+ years of experience
+                and ISO certifications provide our investors with peace of mind.</p>
+    
+              <p class="text-gray-600 mb-4"><strong>3. Diversify Your Portfolio:</strong> Consider mixing residential
+                and commercial investments to balance risk and returns. Our SCC Biz Plaza offers excellent commercial
+                investment opportunities.</p>
+              <p class="text-gray-600 mb-4"><strong>4. Long-term vs Short-term:</strong> While flipping properties can
+                be profitable, long-term holdings generally provide more stable returns, especially in well-planned
+                developments.</p>
+              <p class="text-gray-600">Remember, the best investment strategy is one that aligns with your financial
+                goals and risk tolerance. Our investment specialists at SCC Group are always available to provide
+                personalized advice based on current market conditions.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Blog Post 4 -->
+        <div class="property-card bg-white rounded-xl shadow-lg overflow-hidden">
+          <img
+            src="Images/Blog-images/Why Raj Nagar.webp"
+            alt="Raj Nagar Extension" class="w-full h-64 object-cover">
+          <div class="p-6">
+            <div class="flex items-center text-sm text-gray-500 mb-2">
+              <span>December 10, 2022</span>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-3">Why Raj Nagar Extension is the Next Hotspot</h3>
+            <p class="text-gray-600 mb-4">Exploring the infrastructure developments and amenities making Raj Nagar
+              Extension a preferred residential destination.</p>
+            <button onclick="toggleBlogContent('blog4')" class="text-scc-blue font-medium hover:text-scc-navy">Read More
+              →</button>
+            <div id="blog4" class="blog-content mt-4">
+              <p class="text-gray-600 mb-4">Raj Nagar Extension in Ghaziabad has emerged as one of the most sought-after
+                residential locations in the National Capital Region. Here's why:</p>
+              <p class="text-gray-600 mb-4"><strong>1. Strategic Location:</strong> Situated along NH-58, it offers
+                excellent connectivity to Delhi, Noida, and other parts of NCR. The upcoming metro extension will
+                further enhance accessibility.</p>
+              <p class="text-gray-600 mb-4"><strong>2. Infrastructure Development:</strong> The area has seen massive
+                infrastructure upgrades including wide roads, proper drainage systems, and reliable electricity and
+                water supply.</p>
+       
+              <p class="text-gray-600 mb-4"><strong>3. Social Infrastructure:</strong> The area now boasts reputed
+                schools like DPS and GD Goenka, hospitals, shopping malls, and entertainment options, making it a
+                self-sufficient community.</p>
+              <p class="text-gray-600 mb-4"><strong>4. Affordable Options:</strong> Compared to other NCR locations, Raj
+                Nagar Extension offers more affordable housing options without compromising on quality or amenities.</p>
+              <p class="text-gray-600">SCC Group recognized the potential of Raj Nagar Extension early and has developed
+                several premium projects in the area, including SCC Blossom and SCC Heights. Our projects here combine
+                the advantages of the location with our signature quality construction and thoughtful design.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Blog Post 5 -->
+        <div class="property-card bg-white rounded-xl shadow-lg overflow-hidden">
+          <img
+            src="Images/Blog-images/Modern Home.webp"
+            alt="Home Interior" class="w-full h-64 object-cover">
+          <div class="p-6">
+            <div class="flex items-center text-sm text-gray-500 mb-2">
+              <span>November 5, 2022</span>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-3">Modern Home Interior Design Trends</h3>
+            <p class="text-gray-600 mb-4">Discover the latest interior design trends that can transform your living
+              spaces into stylish and functional homes.</p>
+            <button onclick="toggleBlogContent('blog5')" class="text-scc-blue font-medium hover:text-scc-navy">Read More
+              →</button>
+            <div id="blog5" class="blog-content mt-4">
+              <p class="text-gray-600 mb-4">2023 is bringing exciting new trends in home interiors that blend aesthetics
+                with functionality. Here are the top trends we're incorporating in our SCC Group projects:</p>
+              <p class="text-gray-600 mb-4"><strong>1. Biophilic Design:</strong> Bringing nature indoors through
+                natural materials, indoor plants, and nature-inspired color palettes. Our apartments feature large
+                windows that maximize natural light and outdoor views.</p>
+              <p class="text-gray-600 mb-4"><strong>2. Multifunctional Spaces:</strong> With more people working from
+                home, flexible spaces that can serve as both offices and living areas are in high demand. Our floor
+                plans are designed with this flexibility in mind.</p>
+      
+              <p class="text-gray-600 mb-4"><strong>3. Sustainable Materials:</strong> Reclaimed wood, recycled glass,
+                and low-VOC paints are becoming standard choices for eco-conscious homeowners.</p>
+              <p class="text-gray-600 mb-4"><strong>4. Smart Home Integration:</strong> Our premium projects now include
+                pre-wiring for smart home systems, allowing residents to easily control lighting, security, and climate
+                from their smartphones.</p>
+              <p class="text-gray-600"><strong>5. Minimalist Luxury:</strong> Clean lines, uncluttered spaces, and
+                high-quality materials create a sense of understated elegance. Our model apartments showcase these
+                design principles beautifully.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Blog Post 6 -->
+        <div class="property-card bg-white rounded-xl shadow-lg overflow-hidden">
+          <img
+            src="Images/Blog-images/The Future.webp"
+            alt="Commercial Real Estate" class="w-full h-64 object-cover">
+          <div class="p-6">
+            <div class="flex items-center text-sm text-gray-500 mb-2">
+              <span>October 15, 2022</span>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-3">The Future of Commercial Real Estate</h3>
+            <p class="text-gray-600 mb-4">How changing work patterns and consumer behaviors are reshaping commercial
+              real estate in post-pandemic era.</p>
+            <button onclick="toggleBlogContent('blog6')" class="text-scc-blue font-medium hover:text-scc-navy">Read More
+              →</button>
+            <div id="blog6" class="blog-content mt-4">
+              <p class="text-gray-600 mb-4">The commercial real estate sector is undergoing its most significant
+                transformation in decades. Here's what investors and businesses need to know:</p>
+              <p class="text-gray-600 mb-4"><strong>1. Hybrid Work Models:</strong> The traditional 9-to-5 office is
+                being replaced by flexible workspaces. Our SCC Biz Plaza offers customizable office solutions that can
+                adapt to changing business needs.</p>
+              <p class="text-gray-600 mb-4"><strong>2. Suburban Office Spaces:</strong> With employees preferring to
+                work closer to home, demand for quality office spaces in areas like Raj Nagar Extension has surged.</p>
+    
+              <p class="text-gray-600 mb-4"><strong>3. Retail Evolution:</strong> Physical stores are becoming
+                experience centers rather than just sales points. Our commercial developments incorporate spaces
+                designed for immersive brand experiences.</p>
+              <p class="text-gray-600 mb-4"><strong>4. Health and Wellness:</strong> Commercial buildings now need to
+                prioritize air quality, natural light, and open spaces. All SCC Group commercial projects meet these new
+                standards.</p>
+              <p class="text-gray-600">The future of commercial real estate belongs to spaces that can adapt to changing
+                needs while providing exceptional experiences for both businesses and their customers. SCC Group is
+                committed to developing properties that meet these evolving demands.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-white py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid md:grid-cols-4 gap-8">
+        <div>
+          <p class="text-gray-400 mb-4">SCC Group - Building dreams since 2005 with ISO certification and excellence in
+            real estate development.</p>
+          <div class="flex space-x-3">
+            <a href="#" class="text-gray-400 hover:text-scc-gold"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="text-gray-400 hover:text-scc-gold"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="text-gray-400 hover:text-scc-gold"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="font-semibold mb-4">Quick Links</h4>
+          <div class="space-y-2">
+            <a href="index.html" class="block text-gray-400 hover:text-white">Home</a>
+            <a href="residential.html" class="block text-gray-400 hover:text-white">Residential</a>
+            <a href="commercial.html" class="block text-gray-400 hover:text-white">Commercial</a>
+            <a href="blog.html" class="block text-white">Blog</a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="font-semibold mb-4">Company</h4>
+          <div class="space-y-2">
+            <a href="index.html#about" class="block text-gray-400 hover:text-white">About Us</a>
+            <a href="index.html#testimonials" class="block text-gray-400 hover:text-white">Reviews</a>
+            <a href="partners.html" class="block text-gray-400 hover:text-white">Partners</a>
+            <a href="index.html#contact" class="block text-gray-400 hover:text-white">Contact</a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="font-semibold mb-4">Contact Info</h4>
+          <div class="space-y-2 text-gray-400">
+            <p><i class="fas fa-phone mr-2"></i>+91-9654003399</p>
+            <p><i class="fas fa-envelope mr-2"></i>info@sccgroup.in</p>
+            <p><i class="fas fa-map-marker-alt mr-2"></i>Raj Nagar Extension, Ghaziabad</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+        <p>&copy; 2024 SCC Group. All rights reserved. | <a href="#" class="hover:text-white">Terms of Use</a> | <a
+            href="#" class="hover:text-white">Privacy Policy</a></p>
+      </div>
+    </div>
+  </footer>
+
+
+
+  <script src="Script.js"></script>
+</body>
+
+</html>

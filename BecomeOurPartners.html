@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Become Our Partner | SCC Group - Real Estate Partnership Opportunities</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body class="font-inter bg-white scroll-smooth">
+
+  <!-- Navigation Header -->
+  <nav class="fixed top-0 w-full z-50 bg-white/95 backdrop-blur-md shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center py-4">
+        <div class="flex items-center">
+          <img src="https://sccgroup.in/wp-content/uploads/2018/12/SCC-Logo-1.png" alt="SCC Group Logo"
+            class="h-10 w-auto">
+        </div>
+
+        <div class="hidden md:flex items-center space-x-8">
+          <a href="index.html" class="text-gray-700 hover:text-scc-blue font-medium">Home</a>
+
+          <!-- Properties Dropdown -->
+          <div class="relative group">
+            <button class="flex items-center text-gray-700 hover:text-scc-blue font-medium">
+              <span>Properties</span>
+              <i class="fas fa-chevron-down ml-1 text-xs transition-transform group-hover:rotate-180"></i>
+            </button>
+            <div
+              class="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+              <a href="residential.html"
+                class="block px-4 py-2 text-gray-700 hover:bg-scc-blue/10 hover:text-scc-blue">Residential</a>
+              <a href="commercial.html"
+                class="block px-4 py-2 text-gray-700 hover:bg-scc-blue/10 hover:text-scc-blue">Commercial</a>
+            </div>
+          </div>
+
+          <a href="blog.html" class="text-gray-700 hover:text-scc-blue font-medium">Blog</a>
+          <a href="BecomeOurPartners.html" class="text-scc-blue font-medium">Become Our Partner</a>
+          <a href="index.html#about" class="text-gray-700 hover:text-scc-blue font-medium">About</a>
+          <a href="index.html#testimonials" class="text-gray-700 hover:text-scc-blue font-medium">Reviews</a>
+          <a href="index.html#contact" class="text-gray-700 hover:text-scc-blue font-medium">Contact</a>
+        </div>
+
+        <div class="flex items-center space-x-4">
+          <button onclick="openScheduleVisitModal()"
+            class="bg-scc-gold text-white px-6 py-2 rounded-lg font-semibold hover:bg-yellow-600 transition-colors">
+            Schedule Visit
+          </button>
+          <button class="md:hidden text-gray-700">
+            <i class="fas fa-bars text-xl"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+   <!-- Schedule Visit Modal -->
+    <div id="scheduleVisitModal"
+        class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 bg-black bg-opacity-50">
+        <div class="bg-white rounded-xl max-w-md w-full p-6 relative">
+            <button onclick="closeScheduleVisitModal()"
+                class="absolute top-4 right-4 text-gray-500 hover:text-gray-700">
+                <i class="fas fa-times"></i>
+            </button>
+
+            <h3 class="text-2xl font-bold text-scc-navy mb-4">Schedule a Site Visit</h3>
+
+            <form class="space-y-4" action="https://api.web3forms.com/submit" method="POST">
+                <input type="hidden" name="access_key" value="13299648-d021-446d-a42d-82ce9a30cd90">
+
+                <div>
+                    <label class="block text-sm font-medium mb-1">Full Name*</label>
+                    <input type="text" name="name" required
+                        class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-scc-blue">
+                </div>
+
+                <div>
+                    <label class="block text-sm font-medium mb-1">Email*</label>
+                    <input type="email" name="email" required
+                        class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-scc-blue">
+                </div>
+
+                <div>
+                    <label class="block text-sm font-medium mb-1">Phone Number*</label>
+                    <input type="tel" name="phone" required
+                        class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-scc-blue">
+                </div>
+
+                <div>
+                    <label class="block text-sm font-medium mb-1">Preferred Property</label>
+                    <select name="property"
+                        class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-scc-blue">
+                        <option value="">Select a property</option>
+                        <option value="SCC Blossom">SCC Blossom</option>
+                        <option value="SCC Heights">SCC Heights</option>
+                        <option value="SCC Biz Plaza">SCC Biz Plaza</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label class="block text-sm font-medium mb-1">Preferred Date</label>
+                    <input type="date" name="preferred_date"
+                        class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-scc-blue">
+                </div>
+
+                <div>
+                    <label class="block text-sm font-medium mb-1">Message</label>
+                    <textarea name="message" rows="3"
+                        class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-scc-blue"></textarea>
+                </div>
+
+                <button type="submit"
+                    class="w-full bg-scc-gold text-white py-3 rounded-lg font-semibold hover:bg-yellow-600 transition-colors">
+                    Submit Request
+                </button>
+            </form>
+        </div>
+    </div>
+
+
+
+
+  <!-- Partners Hero Section -->
+  <section class="relative py-32 bg-scc-navy text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h1 class="text-4xl md:text-6xl font-bold mb-6">Become Our Partner</h1>
+      <p class="text-xl text-blue-200 max-w-3xl mx-auto">
+        Join SCC Group's network of trusted partners and grow your business with India's leading real estate developer
+      </p>
+    </div>
+  </section>
+
+  <!-- Partnership Benefits -->
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl font-bold text-gray-900 mb-4">Why Partner With SCC Group?</h2>
+        <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+          With 18+ years of experience and ISO-certified processes, SCC Group offers unparalleled partnership opportunities in the NCR real estate market.
+        </p>
+      </div>
+      
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- Benefit 1 -->
+        <div class="bg-white p-8 rounded-xl shadow-md">
+          <div class="w-16 h-16 bg-scc-blue/10 rounded-full flex items-center justify-center mb-6">
+            <i class="fas fa-chart-line text-2xl text-scc-blue"></i>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-3">Increased Revenue</h3>
+          <p class="text-gray-600">Our partners enjoy industry-leading commission structures and volume-based incentives that grow with your performance.</p>
+        </div>
+        
+        <!-- Benefit 2 -->
+        <div class="bg-white p-8 rounded-xl shadow-md">
+          <div class="w-16 h-16 bg-scc-emerald/10 rounded-full flex items-center justify-center mb-6">
+            <i class="fas fa-medal text-2xl text-scc-emerald"></i>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-3">Brand Association</h3>
+          <p class="text-gray-600">Leverage our reputation as a trusted developer with 25+ completed projects and 5000+ happy customers.</p>
+        </div>
+        
+        <!-- Benefit 3 -->
+        <div class="bg-white p-8 rounded-xl shadow-md">
+          <div class="w-16 h-16 bg-scc-gold/10 rounded-full flex items-center justify-center mb-6">
+            <i class="fas fa-gem text-2xl text-scc-gold"></i>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-3">Premium Inventory</h3>
+          <p class="text-gray-600">Get exclusive access to our portfolio of residential and commercial properties in prime NCR locations.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Partnership Content -->
+  <section class="py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid md:grid-cols-2 gap-12 items-center mb-16">
+        <div>
+          <h2 class="text-3xl font-bold text-gray-900 mb-6">Our Partnership Programs</h2>
+          <p class="text-lg text-gray-600 mb-6">
+            SCC Group offers tailored partnership programs designed to create mutual growth opportunities across the real estate ecosystem.
+          </p>
+          <ul class="space-y-4 text-gray-600 mb-8">
+            <li class="flex items-start">
+              <i class="fas fa-check-circle text-scc-emerald mt-1 mr-3"></i>
+              <span><strong>Broker Partnership:</strong> Earn commissions up to 3% on residential sales and 5% on commercial leases</span>
+            </li>
+            <li class="flex items-start">
+              <i class="fas fa-check-circle text-scc-emerald mt-1 mr-3"></i>
+              <span><strong>Supplier Network:</strong> Preferred vendor status with guaranteed payment terms</span>
+            </li>
+            <li class="flex items-start">
+              <i class="fas fa-check-circle text-scc-emerald mt-1 mr-3"></i>
+              <span><strong>Design Collaborations:</strong> Showcase your work in our model apartments and experience centers</span>
+            </li>
+            <li class="flex items-start">
+              <i class="fas fa-check-circle text-scc-emerald mt-1 mr-3"></i>
+              <span><strong>Financial Partnerships:</strong> Special home loan rates for your clients through our banking partners</span>
+            </li>
+          </ul>
+          <div class="bg-scc-blue/10 p-6 rounded-lg border border-scc-blue/20">
+            <h4 class="font-bold text-scc-navy mb-2">Partner Success Story</h4>
+            <p class="text-gray-700 italic">"Our brokerage saw a 40% increase in revenue after joining SCC Group's Preferred Partner Program. Their marketing support and timely payouts make them our developer of choice."</p>
+            <p class="text-sm text-gray-600 mt-2">- Rajesh Verma, VR Properties</p>
+          </div>
+        </div>
+        <div>
+          <img src="Images/becomeOurParteners.webp" alt="Business partners shaking hands" class="rounded-xl shadow-lg w-full h-auto object-cover">
+        </div>
+      </div>
+
+      <!-- Partnership Form -->
+      <div class="bg-gray-50 rounded-2xl p-8 md:p-12 shadow-inner">
+        <h3 class="text-2xl font-bold text-center mb-2">Partner Inquiry Form</h3>
+        <p class="text-center text-gray-600 mb-8 max-w-2xl mx-auto">Fill out this form and our partnership team will contact you within 24 hours to discuss opportunities.</p>
+        
+        <form class="max-w-2xl mx-auto space-y-6"  action="https://api.web3forms.com/submit" method="POST">
+               <input type="hidden" name="access_key" value="13299648-d021-446d-a42d-82ce9a30cd90">
+          <div class="grid md:grid-cols-2 gap-6">
+            <div>
+              <label for="fullName" class="block text-sm font-medium mb-2">Full Name*</label>
+              <input type="text"  name="Full Name" required
+                class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-scc-blue">
+            </div>
+            <div>
+              <label for="company" class="block text-sm font-medium mb-2">Company Name*</label>
+              <input type="text" name="Company Name" required
+                class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-scc-blue">
+            </div>
+          </div>
+          
+          <div class="grid md:grid-cols-2 gap-6">
+            <div>
+              <label for="email" class="block text-sm font-medium mb-2">Email Address*</label>
+              <input type="email"  name="Email Address" required
+                class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-scc-blue">
+            </div>
+            <div>
+              <label for="phone" class="block text-sm font-medium mb-2">Phone Number*</label>
+              <input type="tel"  name="Phone Number" required
+                class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-scc-blue">
+            </div>
+          </div>
+          
+          <div>
+            <label for="partnershipType" class="block text-sm font-medium mb-2">Partnership Interest*</label>
+            <select id="partnershipType" name="Partnership Interest" required
+              class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-scc-blue">
+              <option value="">Select partnership type</option>
+              <option value="brokerage">Real Estate Brokerage</option>
+              <option value="supplier">Supplier Partnership</option>
+              <option value="design">Design Collaboration</option>
+              <option value="financial">Financial Partnership</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+          
+          <div>
+            <label for="message" class="block text-sm font-medium mb-2">Tell Us About Your Business*</label>
+            <textarea id="message" name="Tell us About Your Business" rows="4" required
+              class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-scc-blue"></textarea>
+          </div>
+          
+          <div class="flex items-center">
+            <input type="checkbox"  name="agreeTerms" required
+              class="w-4 h-4 rounded border-gray-300 text-scc-blue focus:ring-scc-blue mr-3">
+            <label for="agreeTerms" class="text-sm text-gray-600">
+              I agree to SCC Group's <a href="#" class="text-scc-blue hover:underline">Partner Terms</a> and <a href="#" class="text-scc-blue hover:underline">Privacy Policy</a>
+            </label>
+          </div>
+          
+          <button type="submit" class="w-full bg-scc-gold text-white py-3 rounded-lg font-semibold hover:bg-yellow-600 transition-colors">
+            Submit Partnership Request
+          </button>
+        </form>
+        
+        <div id="formSuccess" class="hidden text-center mt-6 p-4 bg-green-50 text-green-700 rounded-lg">
+          <i class="fas fa-check-circle text-2xl mb-2"></i>
+          <h4 class="font-bold">Thank you for your interest!</h4>
+          <p>Our partnership team will contact you within 24 hours.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Partner Testimonials -->
+  <section class="py-16 bg-scc-navy text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-center mb-12">What Our Partners Say</h2>
+      
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- Testimonial 1 -->
+        <div class="bg-white/10 p-8 rounded-xl">
+          <div class="flex items-center mb-4">
+            <div class="w-12 h-12 rounded-full bg-scc-gold flex items-center justify-center text-xl font-bold mr-4">AK</div>
+            <div>
+              <h4 class="font-bold">Amit Khanna</h4>
+              <p class="text-blue-200 text-sm">Khanna Associates</p>
+            </div>
+          </div>
+          <p class="italic">"Working with SCC Group has transformed our brokerage. Their marketing support and transparent processes help us close deals faster."</p>
+          <div class="flex mt-4 text-scc-gold">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+        </div>
+        
+        <!-- Testimonial 2 -->
+        <div class="bg-white/10 p-8 rounded-xl">
+          <div class="flex items-center mb-4">
+            <div class="w-12 h-12 rounded-full bg-scc-gold flex items-center justify-center text-xl font-bold mr-4">SP</div>
+            <div>
+              <h4 class="font-bold">Sunita Patel</h4>
+              <p class="text-blue-200 text-sm">Patel Design Studio</p>
+            </div>
+          </div>
+          <p class="italic">"The design collaboration with SCC Group gave our firm incredible exposure. Their projects showcase our work to premium clients."</p>
+          <div class="flex mt-4 text-scc-gold">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+        </div>
+        
+        <!-- Testimonial 3 -->
+        <div class="bg-white/10 p-8 rounded-xl">
+          <div class="flex items-center mb-4">
+            <div class="w-12 h-12 rounded-full bg-scc-gold flex items-center justify-center text-xl font-bold mr-4">RS</div>
+            <div>
+              <h4 class="font-bold">Rahul Sharma</h4>
+              <p class="text-blue-200 text-sm">Sharma Build Supplies</p>
+            </div>
+          </div>
+          <p class="italic">"As a material supplier, SCC Group's timely payments and large project volumes have helped stabilize our cash flow and grow our business."</p>
+          <div class="flex mt-4 text-scc-gold">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star-half-alt"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-white py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid md:grid-cols-4 gap-8">
+        <div>
+          <p class="text-gray-400 mb-4">SCC Group - Building dreams since 2005 with ISO certification and excellence in
+            real estate development.</p>
+          <div class="flex space-x-3">
+            <a href="#" class="text-gray-400 hover:text-scc-gold"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="text-gray-400 hover:text-scc-gold"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="text-gray-400 hover:text-scc-gold"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="font-semibold mb-4">Quick Links</h4>
+          <div class="space-y-2">
+            <a href="index.html" class="block text-gray-400 hover:text-white">Home</a>
+            <a href="residential.html" class="block text-gray-400 hover:text-white">Residential</a>
+            <a href="commercial.html" class="block text-gray-400 hover:text-white">Commercial</a>
+            <a href="blog.html" class="block text-gray-400 hover:text-white">Blog</a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="font-semibold mb-4">Company</h4>
+          <div class="space-y-2">
+            <a href="index.html#about" class="block text-gray-400 hover:text-white">About Us</a>
+            <a href="index.html#testimonials" class="block text-gray-400 hover:text-white">Reviews</a>
+            <a href="partners.html" class="block text-white">Partners</a>
+            <a href="index.html#contact" class="block text-gray-400 hover:text-white">Contact</a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="font-semibold mb-4">Contact Info</h4>
+          <div class="space-y-2 text-gray-400">
+            <p><i class="fas fa-phone mr-2"></i>+91-9654003399</p>
+            <p><i class="fas fa-envelope mr-2"></i>info@sccgroup.in</p>
+            <p><i class="fas fa-map-marker-alt mr-2"></i>Raj Nagar Extension, Ghaziabad</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+        <p>&copy; 2024 SCC Group. All rights reserved. | <a href="#" class="hover:text-white">Terms of Use</a> | <a
+            href="#" class="hover:text-white">Privacy Policy</a></p>
+      </div>
+    </div>
+  </footer>
+
+<script src="Script.js"></script>
+</body>
+</html>

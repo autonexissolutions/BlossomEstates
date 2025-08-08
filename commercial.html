@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Commercial Projects | SCC Blossom - Premium Commercial Spaces in Raj Nagar Extension | SCC Group</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="font-inter bg-white scroll-smooth">
+
+  <!-- Navigation Header -->
+  <nav class="fixed top-0 w-full z-50 bg-white/95 backdrop-blur-md shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center py-4">
+        <div class="flex items-center">
+          <img src="https://sccgroup.in/wp-content/uploads/2018/12/SCC-Logo-1.png" alt="SCC Group Logo"
+            class="h-10 w-auto">
+        </div>
+
+        <div class="hidden md:flex items-center space-x-8">
+          <a href="index.html" class="text-gray-700 hover:text-scc-blue font-medium">Home</a>
+
+          <!-- Properties Dropdown -->
+          <div class="relative group">
+            <button class="flex items-center text-gray-700 hover:text-scc-blue font-medium">
+              <span>Properties</span>
+              <i class="fas fa-chevron-down ml-1 text-xs transition-transform group-hover:rotate-180"></i>
+            </button>
+            <div
+              class="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+              <a href="residential.html"
+                class="block px-4 py-2 text-gray-700 hover:bg-scc-blue/10 hover:text-scc-blue">Residential</a>
+              <a href="commercial.html"
+                class="block px-4 py-2 text-gray-700 hover:bg-scc-blue/10 hover:text-scc-blue">Commercial</a>
+            </div>
+          </div>
+
+          <a href="blog.html" class="text-gray-700 hover:text-scc-blue font-medium">Blog</a>
+          <a href="BecomeOurPartners.html" class="text-gray-700 hover:text-scc-blue font-medium">Become Our Partner</a>
+          <a href="index.html#about" class="text-gray-700 hover:text-scc-blue font-medium">About</a>
+          <a href="index.html#testimonials" class="text-gray-700 hover:text-scc-blue font-medium">Reviews</a>
+          <a href="index.html#contact" class="text-gray-700 hover:text-scc-blue font-medium">Contact</a>
+        </div>
+
+        <div class="flex items-center space-x-4">
+          <button onclick="openScheduleVisitModal()"
+            class="bg-scc-gold text-white px-6 py-2 rounded-lg font-semibold hover:bg-yellow-600 transition-colors">
+            Schedule Visit
+          </button>
+          <button class="md:hidden text-gray-700">
+            <i class="fas fa-bars text-xl"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+
+  <!-- Schedule Visit Modal -->
+  <div id="scheduleVisitModal"
+    class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 bg-black bg-opacity-50">
+    <div class="bg-white rounded-xl max-w-md w-full p-6 relative">
+      <button onclick="closeScheduleVisitModal()" class="absolute top-4 right-4 text-gray-500 hover:text-gray-700">
+        <i class="fas fa-times"></i>
+      </button>
+
+      <h3 class="text-2xl font-bold text-scc-navy mb-4">Schedule a Site Visit</h3>
+
+      <form class="space-y-4" action="https://api.web3forms.com/submit" method="POST">
+        <input type="hidden" name="access_key" value="13299648-d021-446d-a42d-82ce9a30cd90">
+
+        <div>
+          <label class="block text-sm font-medium mb-1">Full Name*</label>
+          <input type="text" name="name" required
+            class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-scc-blue">
+        </div>
+
+        <div>
+          <label class="block text-sm font-medium mb-1">Email*</label>
+          <input type="email" name="email" required
+            class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-scc-blue">
+        </div>
+
+        <div>
+          <label class="block text-sm font-medium mb-1">Phone Number*</label>
+          <input type="tel" name="phone" required
+            class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-scc-blue">
+        </div>
+
+        <div>
+          <label class="block text-sm font-medium mb-1">Preferred Property</label>
+          <select name="property"
+            class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-scc-blue">
+            <option value="">Select a property</option>
+            <option value="SCC Blossom">SCC Blossom</option>
+            <option value="SCC Heights">SCC Heights</option>
+            <option value="SCC Biz Plaza">SCC Biz Plaza</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+
+        <div>
+          <label class="block text-sm font-medium mb-1">Preferred Date</label>
+          <input type="date" name="preferred_date"
+            class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-scc-blue">
+        </div>
+
+        <div>
+          <label class="block text-sm font-medium mb-1">Message</label>
+          <textarea name="message" rows="3"
+            class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-scc-blue"></textarea>
+        </div>
+
+        <button type="submit"
+          class="w-full bg-scc-gold text-white py-3 rounded-lg font-semibold hover:bg-yellow-600 transition-colors">
+          Submit Request
+        </button>
+      </form>
+    </div>
+  </div>
+
+
+
+  <!-- Hero Section -->
+  <section class="relative py-32 bg-scc-navy text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center">
+        <h1 class="text-4xl md:text-6xl font-bold mb-6">Commercial Projects</h1>
+        <p class="text-xl text-blue-200 max-w-3xl mx-auto">
+          Premium commercial spaces designed for business success in strategic locations.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Commercial Projects -->
+  <section class="py-20 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+          SCC Biz Plaza - Commercial Spaces
+        </h2>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+          Strategically located commercial properties for offices, retail, and more
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8 mb-16">
+        <!-- Office Space -->
+        <div class="property-card bg-white rounded-2xl shadow-lg overflow-hidden">
+          <img src="Images/Commercial/office image.webp" alt="Office Space" class="w-full h-64 object-cover">
+          <div class="p-6">
+            <div class="flex items-center justify-between mb-4">
+              <h3 class="text-2xl font-bold text-gray-900">Office Spaces</h3>
+              <span class="bg-scc-emerald text-white px-3 py-1 rounded-full text-sm font-semibold">Available</span>
+            </div>
+            <div class="text-gray-600 mb-4">
+              <div class="flex items-center mb-2">
+                <i class="fas fa-building mr-2 text-scc-blue"></i>
+                <span>500 - 5000 sq ft</span>
+              </div>
+              <div class="flex items-center mb-2">
+                <i class="fas fa-users mr-2 text-scc-blue"></i>
+                <span>Custom configurations</span>
+              </div>
+              <div class="flex items-center">
+                <i class="fas fa-tag mr-2 text-scc-blue"></i>
+                <span>Starting ₹63.95 Lakhs</span>
+              </div>
+            </div>
+            <button onclick="window.location.href='index.html#contact'"
+              class="w-full bg-scc-navy text-white py-3 rounded-lg font-semibold hover:bg-blue-800 transition-colors">
+              Inquire Now
+            </button>
+          </div>
+        </div>
+
+        <!-- Retail Space -->
+        <div class="property-card bg-white rounded-2xl shadow-lg overflow-hidden">
+          <img src="Images/Commercial/retail spaces.webp" alt="Retail Space" class="w-full h-64 object-cover">
+          <div class="p-6">
+            <div class="flex items-center justify-between mb-4">
+              <h3 class="text-2xl font-bold text-gray-900">Retail Spaces</h3>
+              <span class="bg-scc-gold text-white px-3 py-1 rounded-full text-sm font-semibold">Featured</span>
+            </div>
+            <div class="text-gray-600 mb-4">
+              <div class="flex items-center mb-2">
+                <i class="fas fa-store mr-2 text-scc-blue"></i>
+                <span>300 - 3000 sq ft</span>
+              </div>
+              <div class="flex items-center mb-2">
+                <i class="fas fa-walking mr-2 text-scc-blue"></i>
+                <span>High footfall areas</span>
+              </div>
+              <div class="flex items-center">
+                <i class="fas fa-tag mr-2 text-scc-blue"></i>
+                <span>Starting ₹63.95 Lakhs</span>
+              </div>
+            </div>
+            <button onclick="window.location.href='index.html#contact'"
+              class="w-full bg-scc-navy text-white py-3 rounded-lg font-semibold hover:bg-blue-800 transition-colors">
+              Inquire Now
+            </button>
+          </div>
+        </div>
+
+        <!-- Food Court -->
+        <div class="property-card bg-white rounded-2xl shadow-lg overflow-hidden">
+          <img src="Images/Commercial/food court spaces.webp" alt="Food Court" class="w-full h-64 object-cover">
+          <div class="p-6">
+            <div class="flex items-center justify-between mb-4">
+              <h3 class="text-2xl font-bold text-gray-900">Food Court Spaces</h3>
+              <span class="bg-purple-600 text-white px-3 py-1 rounded-full text-sm font-semibold">Premium</span>
+            </div>
+            <div class="text-gray-600 mb-4">
+              <div class="flex items-center mb-2">
+                <i class="fas fa-utensils mr-2 text-scc-blue"></i>
+                <span>200 - 1500 sq ft</span>
+              </div>
+              <div class="flex items-center mb-2">
+                <i class="fas fa-chair mr-2 text-scc-blue"></i>
+                <span>Ready-to-use setups</span>
+              </div>
+              <div class="flex items-center">
+                <i class="fas fa-tag mr-2 text-scc-blue"></i>
+                <span>Starting ₹63.95 Lakhs</span>
+              </div>
+            </div>
+            <button onclick="window.location.href='index.html#contact'"
+              class="w-full bg-scc-navy text-white py-3 rounded-lg font-semibold hover:bg-blue-800 transition-colors">
+              Inquire Now
+            </button>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- SCC Blossom Commercial Section -->
+      <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="text-center mb-16">
+            <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+              SCC Blossom - Commercial Spaces
+            </h2>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+              Premium commercial spaces in Raj Nagar Extension, Ghaziabad
+            </p>
+            <span class="inline-block mt-4 bg-blue-100 text-blue-800 px-4 py-1 rounded-full text-sm font-semibold">
+              Under Construction
+            </span>
+          </div>
+
+          <div class="grid md:grid-cols-2 gap-12 items-center mb-16">
+            <div>
+              <img src="Images/Commercial/commerical.webp" alt="SCC Blossom Commercial Project"
+                class="rounded-xl shadow-lg w-full h-auto">
+            </div>
+            <div>
+              <h3 class="text-3xl font-bold text-gray-900 mb-6">Project Overview</h3>
+              <p class="text-lg text-gray-600 mb-6">
+                SCC Blossom Commercial offers premium commercial spaces in the heart of Raj Nagar Extension,
+                Ghaziabad. Strategically located with excellent connectivity to Delhi and NCR, these spaces
+                are perfect for offices, retail outlets, and other commercial ventures.
+              </p>
+
+              <div class="grid grid-cols-2 gap-4 mb-6">
+                <div class="bg-scc-blue/10 p-4 rounded-lg">
+                  <p class="text-2xl font-bold text-scc-blue mb-1">G+4</p>
+                  <p class="text-gray-600">Commercial Complex</p>
+                </div>
+                <div class="bg-scc-emerald/10 p-4 rounded-lg">
+                  <p class="text-2xl font-bold text-scc-emerald mb-1">RERA</p>
+                  <p class="text-gray-600">Approved</p>
+                </div>
+                <div class="bg-scc-gold/10 p-4 rounded-lg">
+                  <p class="text-2xl font-bold text-scc-gold mb-1">Prime</p>
+                  <p class="text-gray-600">Location</p>
+                </div>
+                <div class="bg-scc-navy/10 p-4 rounded-lg">
+                  <p class="text-2xl font-bold text-scc-navy mb-1">Custom</p>
+                  <p class="text-gray-600">Configurations</p>
+                </div>
+              </div>
+
+              <button onclick="window.location.href='index.html#contact'"
+                class="bg-scc-navy text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-800 transition-colors">
+                Book Your Space
+              </button>
+            </div>
+          </div>
+
+          <div class="bg-gray-50 rounded-2xl shadow-lg p-8 mb-16">
+            <h3 class="text-3xl font-bold text-gray-900 mb-6">Key Features</h3>
+            <div class="grid md:grid-cols-2 gap-8">
+              <div>
+                <ul class="space-y-4">
+                  <li class="flex items-start">
+                    <i class="fas fa-check-circle text-scc-emerald mt-1 mr-3"></i>
+                    <span>Prime commercial location in Raj Nagar Extension</span>
+                  </li>
+                  <li class="flex items-start">
+                    <i class="fas fa-check-circle text-scc-emerald mt-1 mr-3"></i>
+                    <span>Excellent connectivity to Delhi and NCR</span>
+                  </li>
+                  <li class="flex items-start">
+                    <i class="fas fa-check-circle text-scc-emerald mt-1 mr-3"></i>
+                    <span>Modern architecture and premium finishes</span>
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <ul class="space-y-4">
+                  <li class="flex items-start">
+                    <i class="fas fa-check-circle text-scc-emerald mt-1 mr-3"></i>
+                    <span>Ample parking space for customers and employees</span>
+                  </li>
+                  <li class="flex items-start">
+                    <i class="fas fa-check-circle text-scc-emerald mt-1 mr-3"></i>
+                    <span>24/7 security with CCTV surveillance</span>
+                  </li>
+                  <li class="flex items-start">
+                    <i class="fas fa-check-circle text-scc-emerald mt-1 mr-3"></i>
+                    <span>High-speed elevators and modern amenities</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Floor Plans -->
+          <div class="mb-16">
+            <h3 class="text-3xl font-bold text-gray-900 mb-8 text-center">Available Configurations</h3>
+            <div class="grid md:grid-cols-3 gap-6">
+              <div class="bg-white p-6 rounded-xl shadow-md text-center">
+                <h4 class="text-xl font-bold mb-4">Ground Floor</h4>
+                <div class="space-y-2 text-gray-600 mb-4">
+                  <p><i class="fas fa-ruler-combined mr-2"></i> 500 - 2000 sq ft</p>
+                  <p><i class="fas fa-door-open mr-2"></i> Retail Spaces</p>
+                  <p><i class="fas fa-rupee-sign mr-2"></i> Starting at ₹63.95 Lakhs</p>
+                </div>
+                <button onclick="window.location.href='index.html#contact'"
+                  class="bg-scc-blue text-white px-6 py-2 rounded-lg font-medium hover:bg-blue-700 transition-colors">
+                  Inquire Now
+                </button>
+              </div>
+
+              <div class="bg-white p-6 rounded-xl shadow-md text-center">
+                <h4 class="text-xl font-bold mb-4">First Floor</h4>
+                <div class="space-y-2 text-gray-600 mb-4">
+                  <p><i class="fas fa-ruler-combined mr-2"></i> 500 - 3000 sq ft</p>
+                  <p><i class="fas fa-building mr-2"></i> Office Spaces</p>
+                  <p><i class="fas fa-rupee-sign mr-2"></i> Starting at ₹63.95 Lakhs</p>
+                </div>
+                <button onclick="window.location.href='index.html#contact'"
+                  class="bg-scc-blue text-white px-6 py-2 rounded-lg font-medium hover:bg-blue-700 transition-colors">
+                  Inquire Now
+                </button>
+              </div>
+
+              <div class="bg-white p-6 rounded-xl shadow-md text-center">
+                <h4 class="text-xl font-bold mb-4">Upper Floors</h4>
+                <div class="space-y-2 text-gray-600 mb-4">
+                  <p><i class="fas fa-ruler-combined mr-2"></i> 500 - 5000 sq ft</p>
+                  <p><i class="fas fa-briefcase mr-2"></i> Corporate Offices</p>
+                  <p><i class="fas fa-rupee-sign mr-2"></i> Starting at ₹63.95 Lakhs</p>
+                </div>
+                <button onclick="window.location.href='index.html#contact'"
+                  class="bg-scc-blue text-white px-6 py-2 rounded-lg font-medium hover:bg-blue-700 transition-colors">
+                  Inquire Now
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Location Advantage -->
+          <div class="bg-scc-navy text-white rounded-2xl shadow-lg p-8">
+            <h3 class="text-3xl font-bold mb-6">Location Advantage</h3>
+            <div class="grid md:grid-cols-2 gap-8">
+              <div>
+                <ul class="space-y-4">
+                  <li class="flex items-start">
+                    <i class="fas fa-map-marker-alt mt-1 mr-3 text-scc-gold"></i>
+                    <span>Prime location in Raj Nagar Extension</span>
+                  </li>
+                  <li class="flex items-start">
+                    <i class="fas fa-road mt-1 mr-3 text-scc-gold"></i>
+                    <span>Close to NH-24 and proposed metro station</span>
+                  </li>
+                  <li class="flex items-start">
+                    <i class="fas fa-city mt-1 mr-3 text-scc-gold"></i>
+                    <span>Surrounded by residential projects and amenities</span>
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <ul class="space-y-4">
+                  <li class="flex items-start">
+                    <i class="fas fa-school mt-1 mr-3 text-scc-gold"></i>
+                    <span>Proximity to schools, hospitals, and shopping centers</span>
+                  </li>
+                  <li class="flex items-start">
+                    <i class="fas fa-train mt-1 mr-3 text-scc-gold"></i>
+                    <span>Easy access to Anand Vihar ISBT and Railway Station</span>
+                  </li>
+                  <li class="flex items-start">
+                    <i class="fas fa-plane mt-1 mr-3 text-scc-gold"></i>
+                    <span>Well-connected to Indira Gandhi International Airport</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- CTA Section -->
+      <div class="text-center">
+        <h3 class="text-3xl font-bold text-gray-900 mb-4">Ready to Grow Your Business?</h3>
+        <p class="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
+          Our commercial spaces are designed to help your business thrive. Contact us today to find the
+          perfect space for your needs.
+        </p>
+        <div class="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6">
+          <button onclick="window.location.href='index.html#contact'"
+            class="bg-scc-gold text-white px-8 py-3 rounded-lg text-lg font-semibold hover:bg-yellow-600 transition-all transform hover:scale-105">
+            <i class="fas fa-phone-alt mr-2"></i>
+            Call Now
+          </button>
+          <button
+            onclick="window.location.href='mailto:autonexissolutions@gmail.com?subject=Enquiry About SCC Commercial Projects'"
+            class="border-2 border-scc-navy text-scc-navy px-8 py-3 rounded-lg text-lg font-semibold hover:bg-scc-navy hover:text-white transition-all">
+            <i class="fas fa-envelope mr-2"></i>
+            Email Us
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-white py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid md:grid-cols-4 gap-8">
+        <div>
+          <p class="text-gray-400 mb-4">SCC Group - Building dreams since 2005 with ISO certification and
+            excellence in real estate development.</p>
+          <div class="flex space-x-3">
+            <a href="https://www.facebook.com/sccbuildersindia" class="text-gray-400 hover:text-scc-gold"><i
+                class="fab fa-facebook-f"></i></a>
+            <a href="https://twitter.com/SCC_Builders" class="text-gray-400 hover:text-scc-gold"><i
+                class="fab fa-twitter"></i></a>
+            <a href="https://www.instagram.com/sccbuildersgroup/" class="text-gray-400 hover:text-scc-gold"><i
+                class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="font-semibold mb-4">Quick Links</h4>
+          <div class="space-y-2">
+            <a href="index.html" class="block text-gray-400 hover:text-white">Home</a>
+            <a href="residential.html" class="block text-gray-400 hover:text-white">Residential</a>
+            <a href="commercial.html" class="block text-white">Commercial</a>
+            <a href="index.html#about" class="block text-gray-400 hover:text-white">About Us</a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="font-semibold mb-4">Properties</h4>
+          <div class="space-y-2">
+            <a href="#" class="block text-gray-400 hover:text-white">Office Spaces</a>
+            <a href="#" class="block text-gray-400 hover:text-white">Retail Spaces</a>
+            <a href="#" class="block text-gray-400 hover:text-white">Food Court</a>
+            <a href="#" class="block text-gray-400 hover:text-white">Commercial Complex</a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="font-semibold mb-4">Contact Info</h4>
+          <div class="space-y-2 text-gray-400">
+            <p><i class="fas fa-phone mr-2"></i>+91-9654003399</p>
+            <p><i class="fas fa-envelope mr-2"></i>info@sccgroup.in</p>
+            <p><i class="fas fa-map-marker-alt mr-2"></i>Raj Nagar Extension, Ghaziabad</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+        <p>&copy; 2025 SCC Group. All rights reserved. | <a href="#" class="hover:text-white">Terms of Use</a> |
+          <a href="#" class="hover:text-white">Privacy Policy</a>
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="Script.js"></script>
+</body>
+
+</html>
