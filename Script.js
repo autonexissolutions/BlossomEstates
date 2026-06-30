@@ -54,47 +54,104 @@ if (modal) {
 }
 
 // Form submission handling
-const forms = document.querySelectorAll('form');
+const forms = document.querySelectorAll('form[action="https://api.web3forms.com/submit"]');
 forms.forEach(form => {
-  form.addEventListener('submit', function (e) {
+  form.addEventListener('submit', async function (e) {
     e.preventDefault();
-    // Here you would typically send the form data to your server
-    // For demo purposes, we'll just show an alert
-    alert('Thank you for your submission! We will contact you soon.');
-    form.reset();
-    if (form.closest('#scheduleVisitModal')) {
-      closeScheduleVisitModal();
+
+    const submitButton = form.querySelector('[type="submit"]');
+    const originalButtonText = submitButton ? submitButton.textContent : '';
+    const formData = new FormData(form);
+
+    if (!formData.has('subject')) {
+      formData.append('subject', 'New website enquiry from SCC Group');
+    }
+
+    if (!formData.has('from_name')) {
+      formData.append('from_name', 'SCC Group Website');
+    }
+
+    if (!formData.has('ccemail')) {
+      formData.append('ccemail', 'sales@sccgroup.in');
+    }
+
+    if (submitButton) {
+      submitButton.disabled = true;
+      submitButton.textContent = 'Submitting...';
+    }
+
+    try {
+      const response = await fetch(form.action, {
+        method: 'POST',
+        body: formData,
+        headers: {
+          Accept: 'application/json'
+        }
+      });
+      const result = await response.json();
+
+      if (!response.ok || !result.success) {
+        throw new Error(result.message || 'Unable to submit the form right now.');
+      }
+
+      alert('Thank you for your submission! We will contact you soon.');
+      form.reset();
+      if (form.closest('#scheduleVisitModal')) {
+        closeScheduleVisitModal();
+      }
+
+      if (form.closest('#partnerForm') && document.getElementById('formSuccess')) {
+        form.style.display = 'none';
+        document.getElementById('formSuccess').classList.remove('hidden');
+        document.getElementById('formSuccess').scrollIntoView({ behavior: 'smooth' });
+      }
+    } catch (error) {
+      alert(error.message || 'Something went wrong. Please try again.');
+    } finally {
+      if (submitButton) {
+        submitButton.disabled = false;
+        submitButton.textContent = originalButtonText;
+      }
     }
   });
 });
 
-// Mobile menu toggle (if you add mobile menu functionality later)
-function toggleMobileMenu() {
-  const menu = document.getElementById('mobileMenu');
-  menu.classList.toggle('hidden');
-}
+// Mobile menu toggle
+document.addEventListener('DOMContentLoaded', function () {
+  const nav = document.querySelector('nav');
+  const menuButton = nav ? [...nav.querySelectorAll('button')].find(button =>
+    button.className.includes('md:hidden') || button.querySelector('.fa-bars')
+  ) : null;
 
+  if (!nav || !menuButton || document.getElementById('mobileMenu')) return;
 
+  const menu = document.createElement('div');
+  menu.id = 'mobileMenu';
+  menu.className = 'hidden md:hidden border-t border-gray-200 bg-white px-4 pb-4 shadow-sm';
+  menu.innerHTML = `
+    <div class="flex flex-col space-y-3 pt-4">
+      <a href="index.html" class="text-gray-700 hover:text-scc-blue font-medium">Home</a>
+      <a href="residential.html" class="text-gray-700 hover:text-scc-blue font-medium">Residential</a>
+      <a href="commercial.html" class="text-gray-700 hover:text-scc-blue font-medium">Commercial</a>
+      <a href="Blog.html" class="text-gray-700 hover:text-scc-blue font-medium">Blog</a>
+      <a href="BecomeOurPartners.html" class="text-gray-700 hover:text-scc-blue font-medium">Become Our Partner</a>
+      <a href="index.html#about" class="text-gray-700 hover:text-scc-blue font-medium">About</a>
+      <a href="index.html#testimonials" class="text-gray-700 hover:text-scc-blue font-medium">Reviews</a>
+      <a href="index.html#contact" class="text-gray-700 hover:text-scc-blue font-medium">Contact</a>
+    </div>
+  `;
+  nav.appendChild(menu);
 
-// Form submission handling
-document.getElementById('partnerForm').addEventListener('submit', function (e) {
-  e.preventDefault();
+  menuButton.addEventListener('click', function () {
+    menu.classList.toggle('hidden');
+  });
 
-  // Here you would typically send the form data to your server
-  // For demo purposes, we'll just show the success message
-
-  // Hide form
-  this.style.display = 'none';
-
-  // Show success message
-  document.getElementById('formSuccess').classList.remove('hidden');
-
-  // Scroll to success message
-  document.getElementById('formSuccess').scrollIntoView({ behavior: 'smooth' });
+  menu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', function () {
+      menu.classList.add('hidden');
+    });
+  });
 });
-
-
-
 
 
 
