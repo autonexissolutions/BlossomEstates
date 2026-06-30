@@ -71,10 +71,6 @@ forms.forEach(form => {
       formData.append('from_name', 'SCC Group Website');
     }
 
-    if (!formData.has('ccemail')) {
-      formData.append('ccemail', 'sales@sccgroup.in');
-    }
-
     if (submitButton) {
       submitButton.disabled = true;
       submitButton.textContent = 'Submitting...';
@@ -94,7 +90,7 @@ forms.forEach(form => {
         throw new Error(result.message || 'Unable to submit the form right now.');
       }
 
-      alert('Thank you for your submission! We will contact you soon.');
+      alert('Thank you.');
       form.reset();
       if (form.closest('#scheduleVisitModal')) {
         closeScheduleVisitModal();
